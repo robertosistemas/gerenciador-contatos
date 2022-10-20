@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2CE8B869-0E2E-4711-B34B-04B2BC9B1836}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GerenciadorContatos</RootNamespace>
+    <AssemblyName>GerenciadorContatos</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>InstaladorGerenciadorContatos\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>F687D99F1F774F5757E82802051C62B955D442AA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GerenciadorContatos_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Testing|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Testing\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.10.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Extensions.ExpressionMapping, Version=4.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.Extensions.ExpressionMapping.4.0.0\lib\net461\AutoMapper.Extensions.ExpressionMapping.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Portable.BouncyCastle.1.8.6.7\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=5.2.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EPPlus.5.2.1\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.17.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LinqKit.1.1.17\lib\net45\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Extensions.DependencyInjection.3.1.6\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.6\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NPOI.2.5.1\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NPOI.2.5.1\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Data.SQLite.Core.1.0.113.1\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Data.SQLite.EF6.1.0.113.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6.Migrations, Version=1.0.112.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Data.SQLite.EF6.Migrations.1.0.112\lib\System.Data.SQLite.EF6.Migrations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Linq.Dynamic.Core.1.2.0\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks, Version=4.0.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContatoFiltroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContatoFiltroForm.Designer.cs">
+      <DependentUpon>ContatoFiltroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CartaoFiltroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CartaoFiltroForm.Designer.cs">
+      <DependentUpon>CartaoFiltroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CartaoEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CartaoEditForm.Designer.cs">
+      <DependentUpon>CartaoEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CartaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CartaoForm.Designer.cs">
+      <DependentUpon>CartaoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CongregacaoEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CongregacaoEditForm.Designer.cs">
+      <DependentUpon>CongregacaoEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CongregacaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CongregacaoForm.Designer.cs">
+      <DependentUpon>CongregacaoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContatoEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContatoEditForm.Designer.cs">
+      <DependentUpon>ContatoEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContatoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContatoForm.Designer.cs">
+      <DependentUpon>ContatoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Excecoes\FormErrorHandler.cs" />
+    <Compile Include="BindHelper.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MunicipioEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MunicipioEditForm.Designer.cs">
+      <DependentUpon>MunicipioEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MunicipioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MunicipioForm.Designer.cs">
+      <DependentUpon>MunicipioForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperadoraEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperadoraEditForm.Designer.cs">
+      <DependentUpon>OperadoraEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperadoraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperadoraForm.Designer.cs">
+      <DependentUpon>OperadoraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicadorEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicadorEditForm.Designer.cs">
+      <DependentUpon>PublicadorEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PublicadorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicadorForm.Designer.cs">
+      <DependentUpon>PublicadorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SequenciaNumericaEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SequenciaNumericaEditForm.Designer.cs">
+      <DependentUpon>SequenciaNumericaEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SequenciaNumericaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SequenciaNumericaForm.Designer.cs">
+      <DependentUpon>SequenciaNumericaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SobreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SobreForm.Designer.cs">
+      <DependentUpon>SobreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnidadeFederacaoEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnidadeFederacaoEditForm.Designer.cs">
+      <DependentUpon>UnidadeFederacaoEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnidadeFederacaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnidadeFederacaoForm.Designer.cs">
+      <DependentUpon>UnidadeFederacaoForm.cs</DependentUpon>
+    </Compile>
+    <None Include="App_Data\GerenciadorContatosZero.db" />
+    <None Include="Properties\DataSources\GerenciadorContatos.Dominio.Dtos.ContatoFitroDto.datasource" />
+    <None Include="Properties\DataSources\GerenciadorContatos.Dominio.SimNao.datasource" />
+    <None Include="Resources\filter.png" />
+    <None Include="Resources\process-accept-icon.png" />
+    <None Include="Resources\Export-To-File-icon.png" />
+    <None Include="Resources\Download-icon.png" />
+    <None Include="Resources\open-file-icon.png" />
+    <None Include="Resources\Action-delete-icon.png" />
+    <None Include="Resources\Action-ok-icon.png" />
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="ContatoFiltroForm.resx">
+      <DependentUpon>ContatoFiltroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CartaoFiltroForm.resx">
+      <DependentUpon>CartaoFiltroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CartaoEditForm.resx">
+      <DependentUpon>CartaoEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CartaoForm.resx">
+      <DependentUpon>CartaoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CongregacaoEditForm.resx">
+      <DependentUpon>CongregacaoEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CongregacaoForm.resx">
+      <DependentUpon>CongregacaoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContatoEditForm.resx">
+      <DependentUpon>ContatoEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContatoForm.resx">
+      <DependentUpon>ContatoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MunicipioEditForm.resx">
+      <DependentUpon>MunicipioEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MunicipioForm.resx">
+      <DependentUpon>MunicipioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperadoraEditForm.resx">
+      <DependentUpon>OperadoraEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperadoraForm.resx">
+      <DependentUpon>OperadoraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="PublicadorEditForm.resx">
+      <DependentUpon>PublicadorEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicadorForm.resx">
+      <DependentUpon>PublicadorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SequenciaNumericaEditForm.resx">
+      <DependentUpon>SequenciaNumericaEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SequenciaNumericaForm.resx">
+      <DependentUpon>SequenciaNumericaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SobreForm.resx">
+      <DependentUpon>SobreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnidadeFederacaoEditForm.resx">
+      <DependentUpon>UnidadeFederacaoEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnidadeFederacaoForm.resx">
+      <DependentUpon>UnidadeFederacaoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <Content Include="App_Data\GerenciadorContatos.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="GerenciadorContatos_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\GerenciadorContatos.Dominio.Cartao.datasource" />
+    <None Include="Properties\DataSources\GerenciadorContatos.Dominio.Congregacao.datasource" />
+    <None Include="Properties\DataSources\GerenciadorContatos.Dominio.Contato.datasource" />
+    <None Include="Properties\DataSources\GerenciadorContatos.Dominio.Dtos.CartaoFiltroDto.datasource" />
+    <None Include="Properties\DataSources\GerenciadorContatos.Dominio.Municipio.datasource" />
+    <None Include="Properties\DataSources\GerenciadorContatos.Dominio.Operadora.datasource" />
+    <None Include="Properties\DataSources\GerenciadorContatos.Dominio.Publicador.datasource" />
+    <None Include="Properties\DataSources\GerenciadorContatos.Dominio.SequenciaNumerica.datasource" />
+    <None Include="Properties\DataSources\GerenciadorContatos.Dominio.UnidadeFederacao.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GerenciadorContatos.Aplicacao.Abstracoes\GerenciadorContatos.Aplicacao.Abstracoes.csproj">
+      <Project>{8c0eb902-8596-4300-835b-8759e5ffb9f1}</Project>
+      <Name>GerenciadorContatos.Aplicacao.Abstracoes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GerenciadorContatos.Aplicacao\GerenciadorContatos.Aplicacao.csproj">
+      <Project>{ed314fe6-f51f-47b2-b2d7-737e278297dc}</Project>
+      <Name>GerenciadorContatos.Aplicacao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GerenciadorContatos.Componentes\GerenciadorContatos.Componentes.csproj">
+      <Project>{a9614e05-3ba4-437f-9c5f-aabe8421dc62}</Project>
+      <Name>GerenciadorContatos.Componentes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GerenciadorContatos.Dominio.Abstracoes\GerenciadorContatos.Dominio.Abstracoes.csproj">
+      <Project>{b981c017-f1f9-4ba0-ad1f-278e393585c3}</Project>
+      <Name>GerenciadorContatos.Dominio.Abstracoes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GerenciadorContatos.Dominio\GerenciadorContatos.Dominio.csproj">
+      <Project>{918ec56d-9130-41a3-a650-140faa534844}</Project>
+      <Name>GerenciadorContatos.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GerenciadorContatos.Modelos\GerenciadorContatos.Modelos.csproj">
+      <Project>{1d69f184-4735-457f-982e-e352b556a25d}</Project>
+      <Name>GerenciadorContatos.Modelos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm-Arrow-Down-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm-Arrow-Up-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pencil-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets')" />
+</Project>
