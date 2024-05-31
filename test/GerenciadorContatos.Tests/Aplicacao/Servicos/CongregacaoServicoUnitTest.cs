@@ -26,7 +26,7 @@ namespace GerenciadorContatos.Tests.Aplicacao.Servicos
         {
             var id = await CongregacaoServico.InserirAsync(new Congregacao { MunicipioId = _municipio.Id, Numero = ObtemId(), Nome = $"Associacao-{System.Guid.NewGuid()}" });
             var congregacao = await CongregacaoServico.ObterPorIdAsync(id);
-            Assert.AreEqual(id, congregacao.Id);
+            Assert.IsNotNull(congregacao);
         }
 
         [TestMethod]

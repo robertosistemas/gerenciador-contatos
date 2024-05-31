@@ -83,7 +83,7 @@ namespace GerenciadorContatos.Repositorio
             string includeProperties = "", InformacaoPagina informacaoPagina = null)
         {
             var infoPagina = informacaoPagina ?? new InformacaoPagina();
-            if (infoPagina.Indice < 1)          
+            if (infoPagina.Indice < 1)
                 infoPagina.Indice = 1;
 
             IQueryable<TModel> query = _dbSet.AsNoTracking();

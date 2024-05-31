@@ -10,7 +10,7 @@ namespace GerenciadorContatos.Repositorio.Abstracoes
     public interface IRepositorio<TModel, TKey> where TModel : ModeloBase<TKey>
     {
         Task<TKey> InserirAsync(TModel entity);
-        Task InserirAsync(List<TModel> entity);
+        Task InserirAsync(List<TModel> entities);
         Task AtualizarAsync(TModel entityToUpdate);
         Task ExcluirAsync(TKey id);
         Task ExcluirAsync(TModel entityToDelete);

@@ -2,7 +2,7 @@
 
 namespace GerenciadorContatos.Repositorio.Abstracoes
 {
-    public interface IOperadoraRepositorio: IRepositorio<OperadoraModelo, int>
+    public interface IOperadoraRepositorio : IRepositorio<OperadoraModelo, int>
     {
     }
 }

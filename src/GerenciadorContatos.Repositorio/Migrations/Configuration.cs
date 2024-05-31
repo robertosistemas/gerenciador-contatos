@@ -3,7 +3,7 @@ using System.Data.SQLite.EF6.Migrations;
 
 namespace GerenciadorContatos.Repositorio.Migrations
 {
-    public  class Configuration : DbMigrationsConfiguration<GerenciadorContatos.Repositorio.GerenciadorContatoDbContext>
+    public class Configuration : DbMigrationsConfiguration<GerenciadorContatos.Repositorio.GerenciadorContatoDbContext>
     {
         public Configuration()
         {

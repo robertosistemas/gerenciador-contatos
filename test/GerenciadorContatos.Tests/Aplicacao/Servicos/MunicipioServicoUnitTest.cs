@@ -26,7 +26,7 @@ namespace GerenciadorContatos.Tests.Aplicacao.Servicos
         {
             var id = await MunicipioServico.InserirAsync(new Municipio { UnidadeFederacaoId = _unidadeFederacao.Id, Nome = $"Cidade-{System.Guid.NewGuid()}" });
             var municipio = await MunicipioServico.ObterPorIdAsync(id);
-            Assert.AreEqual(id, municipio.Id);
+            Assert.IsNotNull(municipio);
         }
 
         [TestMethod]

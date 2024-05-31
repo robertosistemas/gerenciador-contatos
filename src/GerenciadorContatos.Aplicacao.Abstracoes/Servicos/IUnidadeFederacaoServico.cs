@@ -3,7 +3,7 @@ using GerenciadorContatos.Modelos;
 
 namespace GerenciadorContatos.Aplicacao.Abstracoes.Servicos
 {
-    public interface IUnidadeFederacaoServico: IServico<UnidadeFederacao, int, UnidadeFederacaoModelo>
+    public interface IUnidadeFederacaoServico : IServico<UnidadeFederacao, int, UnidadeFederacaoModelo>
     {
     }
 }

@@ -65,7 +65,7 @@ namespace GerenciadorContatos.Aplicacao
             ServiceScope = ServiceProvider.CreateScope();
         }
 
-        public static T GetService<T>() => (T)ServiceScope.ServiceProvider.GetService<T>();
+        public static T GetService<T>() => ServiceScope.ServiceProvider.GetService<T>();
 
         public static void RemoveTodos()
         {

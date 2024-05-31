@@ -9,7 +9,7 @@ namespace GerenciadorContatos.Dominio
     public class EntidadeBase<TEntity, TKey> : IEntidade<TKey>, INotifyPropertyChanged, IEditableObject
     {
 
-        private static object _lockObject = new object();
+        private static readonly object _lockObject = new object();
 
         private TKey _id;
 

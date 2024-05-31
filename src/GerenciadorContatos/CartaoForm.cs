@@ -125,7 +125,7 @@ namespace GerenciadorContatos
 
         private async void CartaoForm_Load(object sender, System.EventArgs e)
         {
-             await CarregaDadosAsync(true, true, true, true);
+            await CarregaDadosAsync(true, true, true, true);
         }
 
         private void CartaoForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -285,7 +285,7 @@ namespace GerenciadorContatos
         private async Task DesignarAsync()
         {
             var item = (Cartao)CartaoBindingSource.Current;
-            if (item.PublicadorId.HasValue && item.Disponivel == false)
+            if (item.PublicadorId.HasValue && !item.Disponivel)
             {
                 MessageBox.Show("Este cartão já foi designado e ainda não foi devolvido!", "Gerenciador contatos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
